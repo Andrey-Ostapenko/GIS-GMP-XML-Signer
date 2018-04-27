@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FBF3512-059A-4557-9B49-D2478B3ECDA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>gisgmp_signer</RootNamespace>
+    <AssemblyName>signer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StreamReaderWriter.cs" />
+    <Compile Include="Installer1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer1.Designer.cs">
+      <DependentUpon>Installer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn18BitCharString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BerDecodeBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BerDecodeContext.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BerEncodeBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BerInputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BerMessageDumpHandler.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BerOutputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BigInteger.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BitString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1BmpString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Boolean.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1CerInputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1CerOutputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1CharRange.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1CharSet.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1CharString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Choice.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1ChoiceExt.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1DecodeBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1DerDecodeBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1DerEncodeBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1DerInputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1DiscreteCharSet.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1EncodeBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Enumerated.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1GeneralizedTime.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1GeneralString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1GraphicString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Ia5String.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Integer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1MessageBuffer.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Null.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1NumericString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1ObjectDescriptor.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1ObjectIdentifier.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1OctetString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1OpenExt.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1OpenType.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1OutputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1PrintableString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Real.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1RelativeOid.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1RunTime.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Status.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1T61String.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Tag.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Time.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1TraceHandler.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Type.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1UniversalString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1UtcTime.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Utf8String.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Util.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1Value.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1VarWidthCharString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1VideotexString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Asn1VisibleString.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\BigInteger.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\IAsn1InputStream.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\IAsn1NamedEventHandler.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\IAsn1TaggedEventHandler.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\IAsn1Type.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\IntHolder.cs" />
+    <Compile Include="GostCryptography\Asn1\Ber\Tokenizer.cs" />
+    <Compile Include="GostCryptography\Asn1\Common\GostKeyExchange.cs" />
+    <Compile Include="GostCryptography\Asn1\Common\GostKeyExchangeInfo.cs" />
+    <Compile Include="GostCryptography\Asn1\Common\GostKeyExchangeParameters.cs" />
+    <Compile Include="GostCryptography\Asn1\Digest\GostR341194\GostR341194Constants.cs" />
+    <Compile Include="GostCryptography\Asn1\Digest\GostR341194\GostR341194DigestParameters.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789BlobParameters.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789Constants.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789EncryptedKey.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789Iv.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789Key.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789Mac.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789Parameters.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\Gost2814789\Gost2814789ParamSet.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\GostR3410\Gost2814789KeyWrapParameters.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\GostR3410\GostR3410KeyTransport.cs" />
+    <Compile Include="GostCryptography\Asn1\Encryption\GostR3410\GostR3410TransportParameters.cs" />
+    <Compile Include="GostCryptography\Asn1\GostXmlDsig\GostR3410KeyWrap.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\AlgorithmId.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\AlgorithmIdentifier.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\Gost2001DhPubKeyType.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\Gost2001PubKeyType.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\Gost94DhPubKeyType.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\Gost94PubKeyType.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\GostR341194DigestParamsType.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\NullParams.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\PkiConstants.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\Explicit88\SubjectPublicKeyInfo.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\GostR34102001\GostR341094Constants.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\GostR34102001\GostR341094PublicKeyParameters.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\GostR341094\GostR34102001Constants.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\GostR341094\GostR34102001PublicKey.cs" />
+    <Compile Include="GostCryptography\Asn1\PKI\GostR341094\GostR34102001PublicKeyParameters.cs" />
+    <Compile Include="GostCryptography\Cryptography\CspKeyContainerInfoHelper.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost28147CryptoTransform.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost28147CryptoTransformMode.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost28147ImitHashAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost28147ImitHashAlgorithmBase.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost28147SymmetricAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost28147SymmetricAlgorithmBase.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3410AsymmetricAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3410AsymmetricAlgorithmBase.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3410EphemeralAsymmetricAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost34112012256HashAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost34112012512HashAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3411HashAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3411HashAlgorithmBase.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3411Hmac.cs" />
+    <Compile Include="GostCryptography\Cryptography\Gost3411Prf.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostCryptoConfig.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostKeyExchangeAlgorithm.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostKeyExchangeAlgorithmBase.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostKeyExchangeDeformatter.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostKeyExchangeExportMethod.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostKeyExchangeFormatter.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostKeyValue.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostSignatureDeformatter.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostSignatureDescription.cs" />
+    <Compile Include="GostCryptography\Cryptography\GostSignatureFormatter.cs" />
+    <Compile Include="GostCryptography\Cryptography\ProviderTypes.cs" />
+    <Compile Include="GostCryptography\Cryptography\X509CertificateHelper.cs" />
+    <Compile Include="GostCryptography\ExceptionUtility.cs" />
+    <Compile Include="GostCryptography\Native\Constants.cs" />
+    <Compile Include="GostCryptography\Native\CryptoApi.cs" />
+    <Compile Include="GostCryptography\Native\CryptoApiHelper.cs" />
+    <Compile Include="GostCryptography\Native\SafeHashHandleImpl.cs" />
+    <Compile Include="GostCryptography\Native\SafeKeyHandleImpl.cs" />
+    <Compile Include="GostCryptography\Native\SafeProvHandleImpl.cs" />
+    <Compile Include="GostCryptography\Pkcs\GostSignedCms.cs" />
+    <Compile Include="GostCryptography\Properties-\AssemblyInfo.cs" />
+    <Compile Include="GostCryptography\Properties-\Resources.Designer.cs" />
+    <Compile Include="GostCryptography\Xml\GetIdElementDelegate.cs" />
+    <Compile Include="GostCryptography\Xml\GostEncryptedXml.cs" />
+    <Compile Include="GostCryptography\Xml\GostEncryptedXmlImpl.cs" />
+    <Compile Include="GostCryptography\Xml\GostSignedXml.cs" />
+    <Compile Include="GostCryptography\Xml\GostSignedXmlImpl.cs" />
+    <Compile Include="GostCryptography\Xml\GostXmlUtils.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Signer.cs" />
+    <EmbeddedResource Include="GostCryptography\Properties-\Resources.resx" />
+    <EmbeddedResource Include="Installer1.resx">
+      <DependentUpon>Installer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Service1.resx">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
